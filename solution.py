@@ -65,7 +65,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     # Fill in start
     clientSocket.send(msg.encode())
 
-    recv5 = clientSocket.recv(1024).decode()
+    #recv5 = clientSocket.recv(1024).decode()
     #print(recv5)
     #if recv5[:3] != '250':
     #    print('250 reply not received from server.')
@@ -73,6 +73,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
     # Message ends with a single period, send message end and handle server response.
     # Fill in start
+    #endmsg = endmsg + '\r\n'
     clientSocket.send(endmsg.encode())
 
     recv6 = clientSocket.recv(1024).decode()
